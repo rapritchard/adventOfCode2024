@@ -76,14 +76,14 @@ func main() {
 	// Increment the value in dict if an element in rightList matches a key
 	for _, value := range rightList {
 		if _, exists := dict[value]; exists {
-				dict[value]++
+			dict[value]++
 		}
 	}
 
 	for key, value := range dict {
 		similar += key * value
 	}
-	
+
 	fmt.Println("Total Distance:", totalDistance)
 	fmt.Println("Similar:", similar)
 }
