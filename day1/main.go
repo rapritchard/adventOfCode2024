@@ -3,18 +3,12 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"sort"
 	"strconv"
 	"strings"
 )
-
-func abs(a int) int {
-	if a >= 0 {
-		return a
-	}
-	return -a
-}
 
 func main() {
 	// Initialise two empty slices
@@ -67,7 +61,7 @@ func main() {
 
 	dict := make(map[int]int)
 	for i := range leftList {
-		totalDistance += abs(leftList[i] - rightList[i])
+		totalDistance += int(math.Abs(float64(leftList[i] - rightList[i])))
 		if _, exists := dict[leftList[i]]; !exists {
 			dict[leftList[i]] = 0
 		}
